@@ -1,4 +1,4 @@
-# -k9yztuWskyqtcZpB
+# Flipping page detector
 ## Background:
 Our company develops innovative Artificial Intelligence and Computer Vision solutions that revolutionize industries. Machines that can see: We pack our solutions in small yet intelligent devices that can be easily integrated to your existing data flow. Computer vision for everyone: Our devices can recognize faces, estimate age and gender, classify clothing types and colors, identify everyday objects and detect motion. Technical consultancy: We help you identify use cases of artificial intelligence and computer vision in your industry. Artificial intelligence is the technology of today, not the future.
 
@@ -12,3 +12,9 @@ We collected page flipping video from smart phones and labelled them as flipping
 ## Goal(s):
 1) Predict if the page is being flipped using a single image.
 2) Predict if a given sequence of images contains an action of flipping.
+
+## Methodology:
+The images extracted from the videos are pre-processed in order to maximize the performance of the model used. The pre-processing consists in: cropping the images to exclude not informative areas, resizing the images to be compatible with the model input and normalizing the images. The model used is a pre-trained convolutional network called MobileNet-v2 which it is fine-tuned used the data availiable. The fine-tuning of few parameters maximises the performance of the model with limited data. The model detecting the flipping images was then used to classify videos containing a flipping action. The flipping action is present in a video when one of more images in the sequence is classified as flipped.
+
+## Conclusions:
+The flipping page detector model achieves an F1 score of 0.96 classifying 296 true positive samples, 11 false negative samples, 275 true negative samples and 15 false positive samples. The goal of the project is achieved and after an examination of the misclassified examples it is clear that they are all borderline which make them difficult to classify. 
